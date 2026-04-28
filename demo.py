@@ -4,9 +4,7 @@ from random import randint
 
 word_list= ["cordyceps"]
 lock = 5
-word = list(word_list[(0,len(word_list)- 1)])
-guessed_password = [""]*len(word)
-guessed_letters = []
+
 
 
 bag = []
@@ -103,10 +101,10 @@ while part_1:
 
         while lock>1:
             input("you open it upp and somehow it starts upp and not being water damaged, it loads a little bit before it shows: ENTER PASSWORD     ")
-            input("it was a 9 letter combination, it couldn't be that hard right?")
+            input("it was a 9 letter combination, it couldn't be THAT hard right?")
             letters = input("ENTER PASSWORD")
             list(letters)
-            for l in letters:
+            
                 
 
 
