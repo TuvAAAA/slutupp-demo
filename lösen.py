@@ -7,13 +7,10 @@ while True:
     def check_place(char_g, char_w,place):
         if char_g == char_w:
             print(place + "letter: right letter, right place!")
-
     guess = input("enter a word:  ")
-
     while (len(guess) !=9):
                print("that's not a nine letter word")
                guess=input("enter a word:  ")
-               
     for i in range(9):
         if guess == x:
              print("welcome")

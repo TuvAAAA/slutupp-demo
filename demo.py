@@ -88,24 +88,48 @@ while part_1:
     if way ==1:
         input("You decide to take the forest path and admire how it looked even though this feel kinda scary")
         input("it's really quiet, too quiet, before you see something move in the distance")
+        input("some weir bizzare looking thing is in the distance and its compleaty still")
 
     if way ==2:
-        w
+        input("you decide the open is the safest way to go and you sart rowing straight towards the mountain.")
+        input("About everything was just ocean at this point with some floating wreakage here and there, but nothing really special out of the ordinary, well ordinary if you count out the massive flood")
 
     if way ==3:
         
         input("You decide to go the city way to see the wreckage that the flood had caused")
-        input("You continue calm rowing and suddely you see something floating in the need distance, you go towards it, pick it up and see it was some sort of laptop.")
+        input("You continue calm rowing and suddely you see something floating in the need distance, you go towards it, pick it up and see it was some sort of laptop witha stange symbol ontop.")
         
-        
-
         while lock>1:
-            input("you open it upp and somehow it starts upp and not being water damaged, it loads a little bit before it shows: ENTER PASSWORD     ")
-            input("it was a 9 letter combination, it couldn't be THAT hard right?")
-            letters = input("ENTER PASSWORD")
-            list(letters)
+            input("you open it upp and somehow it starts upp and not water damaged, it loads a little bit before it shows: ENTER PASSWORD _ _ _ _ _ _ _ _     ")
+            input("it was a 8 number combination, it couldn't be THAT hard right?")
+            low_num = 1
+            high_num = 1000000000000000
+            answer = 31518425
+            run = True
+            life = 4
+
+            while life > 1:
+                guess = input("ENTER NUMBER CODE: _ _ _ _ _ _ _ _           ")
+                guess = int(guess)
+                guess +=1
+                if guess < low_num or guess > high_num:
+                    print("PASSWORD DENIED, OUT OF RANGE")
+                    life -= 1
+                elif guess > answer:
+                    print("PASSWORD DENIED, TOO HIGH;   TRY AGAIN")
+                    life -= 1
+                elif guess < answer:
+                    print("PASSWORD DENIED, TOO LOW;    TRY AGAIN")
+                    life -= 1
+
+                elif life == 0:
+                    print("ACCESS DENIED")
+                    break
+
+                else:
+                    print("ACCESS GRANTED")
             
-                
+                            
 
 
 
