@@ -3,14 +3,16 @@
 from random import randint
 
 word_list= ["cordyceps"]
-lock = 5
+lock = 4
 
 
+new = True
 
 bag = []
 max_items = 20
 
 md1 = 1
+md2 = 1
 part_1 = True
 
 while part_1:
@@ -51,9 +53,9 @@ while part_1:
             #story
 
     
-    input("You think back to the old kayak you had gotten on impuls and decide to check if you still have it")
-    input("You do! thankfully it's also in a good condition. Now the only thing left to do is pack some recorces to bring with you")
-    bagrun = True
+        input("You think back to the old kayak you had gotten on impuls and decide to check if you still have it")
+        input("You do! thankfully it's also in a good condition. Now the only thing left to do is pack some recorces to bring with you")
+        bagrun = True
    #bag, lägg till saker mm
 
     #göra så att man alltid har access till sin bag
@@ -82,24 +84,27 @@ while part_1:
         elif choice.lower()=="i":
             print(bag)
 
-    input("Great now you have some stuff on your journey")
-    input("You get into your kayak with your stuff and start to paddle towards the moutain")
-    way = int(input("The quote on quote road turns into three sections all leading to the moutain, which do you take:     Forest[1]       Open[2]     City[3]      "))
-    if way ==1:
-        input("You decide to take the forest path and admire how it looked even though this feel kinda scary")
-        input("it's really quiet, too quiet, before you see something move in the distance")
-        input("some weir bizzare looking thing is in the distance and its compleaty still")
+    while md2 == 1:
 
-    if way ==2:
-        input("you decide the open is the safest way to go and you sart rowing straight towards the mountain.")
-        input("About everything was just ocean at this point with some floating wreakage here and there, but nothing really special out of the ordinary, well ordinary if you count out the massive flood")
+        input("Great now you have some stuff on your journey")
+        input("You get into your kayak with your stuff and start to paddle towards the moutain")
+        way = int(input("The quote on quote road turns into three sections all leading to the moutain, which do you take:     Forest[1]       Open[2]     City[3]      "))
+        if way ==1:
+            input("You decide to take the forest path and admire how it looked even though this feel kinda scary")
+            input("it's really quiet, too quiet, before you see something move in the distance")
+            input("some weird bizzare looking thing is in the distance and it's compleaty still, just looking at you")
+            md2 -=1
 
-    if way ==3:
-        
-        input("You decide to go the city way to see the wreckage that the flood had caused")
-        input("You continue calm rowing and suddely you see something floating in the need distance, you go towards it, pick it up and see it was some sort of laptop witha stange symbol ontop.")
-        
-        while lock>1:
+
+        if way ==2:
+            input("you decide the open is the safest way to go and you sart rowing straight towards the mountain.")
+            input("About everything was just ocean at this point with some floating wreakage here and there, but nothing really special out of the ordinary, well ordinary if you count out the massive flood")
+            md2 -= 1
+
+        if way ==3:
+            
+            input("You decide to go the city way to see the wreckage that the flood had caused")
+            input("You continue calm rowing and suddely you see something floating in the need distance, you go towards it, pick it up and see it was some sort of laptop witha stange symbol ontop.")
             input("you open it upp and somehow it starts upp and not water damaged, it loads a little bit before it shows: ENTER PASSWORD _ _ _ _ _ _ _ _     ")
             input("it was a 8 number combination, it couldn't be THAT hard right?")
             low_num = 1
@@ -116,24 +121,32 @@ while part_1:
                     print("PASSWORD DENIED, OUT OF RANGE")
                     life -= 1
                 elif guess > answer:
-                    print("PASSWORD DENIED, TOO HIGH;   TRY AGAIN")
+                    print("PASSWORD DENIED, TOO HIGH        ")
                     life -= 1
                 elif guess < answer:
-                    print("PASSWORD DENIED, TOO LOW;    TRY AGAIN")
+                    print("PASSWORD DENIED, TOO LOW     ")
                     life -= 1
 
-                elif life == 0:
-                    print("ACCESS DENIED")
-                    break
+            if life == 1:
+                print("ACCESS DENIED")
+                life -=1
+                md2-=1
+                break
 
-                else:
-                    print("ACCESS GRANTED")
+            else:
+                print("ACCESS GRANTED")
+                life -= 1
+                md2 -=1
+        md2-=1
+
+print("SUDDENLY THERE A LOUD BLARING FROM A SIREN OR SOMETHING!!!")
+                
+                
+                                
+
+
+
             
-                            
-
-
-
-        
             
             
 
