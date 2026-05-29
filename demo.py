@@ -2,7 +2,6 @@
 
 from random import randint
 
-word_list= ["cordyceps"]
 lock = 4
 
 
@@ -13,13 +12,12 @@ max_items = 20
 
 md1 = 1
 md2 = 1
+last = True
 part_1 = True
 
 while part_1:
         
     while md1 ==1:
-        print("dialog")
-       
         choice = int(input("What do you wanna do first?     Go outside[1]      Check out your room[2]       Turn on the tv[3]       "))
         if choice == 1:
             input("AACK! You open the door and there seems to have been a massive flood during the night, luckly you live on a hill so it didn't take your house with you.")
@@ -78,7 +76,6 @@ while part_1:
                 print(f"{item} har tagits bort")
             else:
                 print(f"{item} doesn't exist in your inventory")
-
         elif choice.lower()=="d":
             bagrun = False
         elif choice.lower()=="i":
@@ -94,12 +91,15 @@ while part_1:
             input("it's really quiet, too quiet, before you see something move in the distance")
             input("some weird bizzare looking thing is in the distance and it's compleaty still, just looking at you")
             md2 -=1
+            way -=1
 
 
         if way ==2:
             input("you decide the open is the safest way to go and you sart rowing straight towards the mountain.")
             input("About everything was just ocean at this point with some floating wreakage here and there, but nothing really special out of the ordinary, well ordinary if you count out the massive flood")
             md2 -= 1
+            way -=2
+
 
         if way ==3:
             
@@ -108,7 +108,7 @@ while part_1:
             input("you open it upp and somehow it starts upp and not water damaged, it loads a little bit before it shows: ENTER PASSWORD _ _ _ _ _ _ _ _     ")
             input("it was a 8 number combination, it couldn't be THAT hard right?")
             low_num = 1
-            high_num = 1000000000000000
+            high_num = 99999999
             answer = 31518425
             run = True
             life = 4
@@ -137,9 +137,11 @@ while part_1:
                 print("ACCESS GRANTED")
                 life -= 1
                 md2 -=1
-        md2-=1
+       
 
-print("SUDDENLY THERE A LOUD BLARING FROM A SIREN OR SOMETHING!!!")
+    while last:
+        print("SUDDENLY THERE A LOUD BLARING FROM A SIREN OR SOMETHING!!!")
+        last = False
                 
                 
                                 
